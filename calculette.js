@@ -7,6 +7,10 @@ class Calculette {
 
   // change inner value
   set(value) {
+    if (typeof value !== 'number') {
+      throw new Error("Unable to handle non-numbers values")
+      return undefined
+    }
 
     this.inner_value = value
     return this
